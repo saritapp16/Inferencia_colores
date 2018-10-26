@@ -1,0 +1,83 @@
+.deactivate_color{
+	
+	margin-left: 5px;
+	margin-right: 5px;
+	display: block;
+	float: center;
+	
+}
+
+.in_line_block{
+
+	display: inline-block;
+	/*border-style: solid;*/
+	width: 120px;
+}
+
+.main_div
+{	
+	border-radius: 15px;
+	width: 80px;
+	height: 80px;
+	margin: 18px;
+	/*display: block;*/
+	float: center;
+	background-color: white;
+}
+
+.gameboard_div
+{	
+	width: 70px;
+	height: 70px;
+	margin: 10px;
+	border-style: dashed;
+	border-radius: 15px;
+	border-color: #c6c6c6;
+	display: inline-block;
+}
+
+.row_div{
+
+	margin: 10px;
+}
+
+.main_row_div{
+	margin: 10px;
+	display: inline-block;
+}
+
+.div_combination{
+	
+	display: none;
+}
+
+span{
+	margin-left: 20px;
+}
+
+span.position{
+
+	display: inline-block;
+}
+
+.palette{
+	
+	position: sticky;
+	top: 0;
+	background-color: white;
+}
+
+.absolute{
+	
+	position: absolute;
+}
+
+.won_label{
+	
+	position: fixed;
+	top: 400px;
+	width: 100%;
+	height: 50px;
+	background-color: red;
+	display: none;
+}

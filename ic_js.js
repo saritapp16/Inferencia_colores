@@ -19,6 +19,12 @@ function reset_game(){
 }	
 
 
+function create_palette(){
+	for(var _div=0; _div < colors.length; _div++){
+		$("#colors").append("<div class='in_line_block' id="+_div +"> <div class='main_div' id='" + colors[_div] + "'></div></div>");
+	}
+}
+
 function intro(){
 
 

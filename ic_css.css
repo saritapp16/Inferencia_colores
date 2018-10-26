@@ -42,8 +42,8 @@
 }
 
 .main_row_div{
-	margin: 10px;
 	display: inline-block;
+	
 }
 
 .div_combination{
@@ -80,4 +80,10 @@ span.position{
 	height: 50px;
 	background-color: red;
 	display: none;
+}
+
+#gameboard{
+
+	margin: auto;
+	width: 800px;
 }

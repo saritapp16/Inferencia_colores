@@ -4,6 +4,8 @@
 	margin-right: 5px;
 	display: block;
 	float: center;
+	text-align: center;
+	width: 100px;
 	
 }
 
@@ -14,6 +16,8 @@
 	width: 120px;
 }
 
+
+
 .main_div
 {	
 	border-radius: 15px;
@@ -23,6 +27,24 @@
 	/*display: block;*/
 	float: center;
 	background-color: white;
+	
+}
+.main_div:hover{
+
+	box-shadow: 10px 5px 5px grey;
+}
+
+.main_div_opacity:hover{
+	box-shadow: 0px 0px;
+}
+
+.main_div_opacity{
+
+	opacity: 0.25;
+	background-image: url("close.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25px 25px;
 }
 
 .gameboard_div
@@ -43,7 +65,7 @@
 
 .main_row_div{
 	display: inline-block;
-	
+
 }
 
 .div_combination{
@@ -65,6 +87,7 @@ span.position{
 	position: sticky;
 	top: 0;
 	background-color: white;
+	margin: auto;
 }
 
 .absolute{

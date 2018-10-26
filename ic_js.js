@@ -16,12 +16,21 @@ function reset_game(){
 	color_cubes();
 	var gameboard = [].slice.call(document.querySelectorAll(".gameboard_div"));
 	console.log(gameboard);
+	$(".palette .main_div").removeClass("main_div_opacity");
+	$(".deactivate_color").text("Desactivar");
 }	
 
 
 function create_palette(){
 	for(var _div=0; _div < colors.length; _div++){
 		$("#colors").append("<div class='in_line_block' id="+_div +"> <div class='main_div' id='" + colors[_div] + "'></div></div>");
+	}
+}
+
+function create_color_combination(){
+
+	for(var _div=0; _div < colors.length; _div++){
+		$("#colors #" + _div).append("<button class='deactivate_color' id='" + colors[_div] + "'>Desactivar</button> </div>");
 	}
 }
 
@@ -60,6 +69,7 @@ function color_cubes(){
 	divs = document.querySelectorAll("#colors .main_div");
 	
 	//Set color to color palett
+	color_status = [];
 	for (var i=0; i < divs.length ; i++){
 		$(divs[i]).css({"background-color": colors[i]});
 		color_status.push(true);
@@ -174,9 +184,21 @@ function deactivate_color(div_color){
 	if(gameboard.length > 0){
 
 		var parent_div_id = document.getElementById(div_color).parentNode.getAttribute('id');
-		var color_id = colors.indexOf($("#"+parent_div_id + " button").attr('id'));
-		//console.log(id);
-		if(color_id != -1){
+		//console.log(parent_div_id);
+		//var color_id = colors.indexOf($("#"+parent_div_id + " button").attr('id'));
+		//console.log(parent_div_id);
+		color_status[parent_div_id] = !color_status[parent_div_id];
+		console.log(color_status[parent_div_id]);
+
+		if(color_status[parent_div_id]){
+			$("#"+parent_div_id + " button").text("Desactivar");
+			$("#" + parent_div_id + " div").removeClass("main_div_opacity");
+		}
+		else{
+			$("#" + parent_div_id + " button").text("Activar");
+			$("#" + parent_div_id + " div").addClass("main_div_opacity");
+		}
+		/*if(color_id != -1){
 			color_status[color_id] = !color_status[color_id];
 			if(!color_status[color_id]){
 				//$("#"+parent_div_id + " div").css({'background-color':colors[Number(parent_div_id)]});

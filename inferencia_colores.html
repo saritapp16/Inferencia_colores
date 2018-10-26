@@ -18,6 +18,7 @@
 			
 			if($(this).css("background-color") != "rgba(0, 0, 0, 0)" && color_status[document.getElementById($(this).attr('id')).parentNode.getAttribute('id')]){	
 				if(gameboard.length > 0){
+					console.log(gameboard);
 					var cell = gameboard.shift();
 					change_cell_color(cell, $(this).css("background-color"));
 					user_combination.push($(this).css("background-color"));
@@ -63,6 +64,7 @@
 		<button class="btn btn-primary" id="reset" onclick="reset_game();">
 			Reset game
 		</button>
+		<input type="text" name="chances"/>
 
 		<div id="colors" class="palette">
 			<script>

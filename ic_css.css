@@ -13,7 +13,7 @@
 
 	display: inline-block;
 	/*border-style: solid;*/
-	width: 120px;
+	width: 110px;
 }
 
 
@@ -68,6 +68,11 @@
 
 }
 
+.input[type=text]{
+	border: 2px solid red;
+    border-radius: 4px;
+}
+
 .div_combination{
 	
 	display: none;
@@ -88,6 +93,7 @@ span.position{
 	top: 0;
 	background-color: white;
 	margin: auto;
+	width: 95%;
 }
 
 .absolute{

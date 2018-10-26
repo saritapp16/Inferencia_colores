@@ -8,16 +8,17 @@ var user_combination = [];
 	
 	
 function reset_game(){
-	var divs = [];
-	var color_combination = [];
-	var combination_divs = [];
-	var user_combination = [];
+	divs = [];
+	color_combination = [];
+	combination_divs = [];
+	user_combination = [];
 	$(".gameboard_div").css({"background-color" : "#FFFFFF"});
 	color_cubes();
-	var gameboard = [].slice.call(document.querySelectorAll(".gameboard_div"));
+	gameboard = [].slice.call(document.querySelectorAll(".gameboard_div"));
 	console.log(gameboard);
 	$(".palette .main_div").removeClass("main_div_opacity");
 	$(".deactivate_color").text("Desactivar");
+	$(".row_div span").text("");
 }	
 
 
@@ -184,9 +185,6 @@ function deactivate_color(div_color){
 	if(gameboard.length > 0){
 
 		var parent_div_id = document.getElementById(div_color).parentNode.getAttribute('id');
-		//console.log(parent_div_id);
-		//var color_id = colors.indexOf($("#"+parent_div_id + " button").attr('id'));
-		//console.log(parent_div_id);
 		color_status[parent_div_id] = !color_status[parent_div_id];
 		console.log(color_status[parent_div_id]);
 
@@ -198,35 +196,9 @@ function deactivate_color(div_color){
 			$("#" + parent_div_id + " button").text("Activar");
 			$("#" + parent_div_id + " div").addClass("main_div_opacity");
 		}
-		/*if(color_id != -1){
-			color_status[color_id] = !color_status[color_id];
-			if(!color_status[color_id]){
-				//$("#"+parent_div_id + " div").css({'background-color':colors[Number(parent_div_id)]});
-				$("#"+parent_div_id + " button").text("Desactivar");
-			}
-			else{
-				//$("#"+parent_div_id + " div").css({'background-color':'#000000'});
-				$("#"+parent_div_id + " button").text("Activar");
-			}
-		}
-		/*if($("#"+parent_div_id + " div").css('background-color') != "rgb(0, 0, 0)"){
-			$("#"+parent_div_id + " div").css({'background-color':'#000000'});
-			$("#"+parent_div_id + " button").text("Activar");
-		}
-		else{
-			//console.log(colors[Number([parent_div_id])]);
-			$("#"+parent_div_id + " div").css({'background-color':colors[Number(parent_div_id)]});
-			$("#"+parent_div_id + " button").text("Desactivar");
-		}*/
+
 	}
 	else {
 		$("#palette #main_div").css({"background-color" : "rgb(0, 0, 0)"});
 	}
 }
-
-/*function toggle_color(div1, div2){
-	
-	var id_div1 = div1.getAttribute('id');
-	if()
-}*/
-

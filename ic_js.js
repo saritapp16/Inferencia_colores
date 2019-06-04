@@ -5,8 +5,8 @@ var color_combination = [];
 var combination_divs = [];
 var gameboard = [];
 var user_combination = [];
-	
-	
+
+
 function reset_game(){
 	divs = [];
 	color_combination = [];
@@ -19,7 +19,7 @@ function reset_game(){
 	$(".palette .main_div").removeClass("main_div_opacity");
 	$(".deactivate_color").text("Desactivar");
 	$(".row_div span").text("");
-}	
+}
 
 
 function create_palette(){
@@ -49,14 +49,14 @@ function intro(){
 
 //Creates the gameboard to track the user combination
 function create_gameboard(){
-	
+
 	for (var column=0; column < 2; column++){
 		$("body #gameboard").append("<div id='column" + column + "'" +" class='main_row_div'></div>");
-		for(var row=0; row < 5; row++){
+		for(var row=0; row < 4; row++){
 			$("body #gameboard #column"+ column).append("<div id='row" + row + column + "'" +" class='row_div'></div>");
 			$("body #gameboard #column"+ column +" #row"+row+column).append("<span id='colors" + row + column + "'> </span>");
 			$("body #gameboard #column"+ column +" #row"+row+column).append("<span id='positions" + row + column + "'> </span></br>");
-			for(var cell=0; cell < 4; cell++){	
+			for(var cell=0; cell < 4; cell++){
 				$("body #gameboard #column"+ column+" #row"+row+column).append("<div id='cell" + column + row + cell + "'" + " class='gameboard_div'></div>");
 			}
 		}
@@ -68,7 +68,7 @@ function color_cubes(){
 
 	//Get color palett
 	divs = document.querySelectorAll("#colors .main_div");
-	
+
 	//Set color to color palett
 	color_status = [];
 	for (var i=0; i < divs.length ; i++){
@@ -78,33 +78,33 @@ function color_cubes(){
 	color_combination = get_random_combination(combination_divs);
 	console.log(color_status);
 
-};	
+};
 
 //Get random combination
 function get_random_combination(a_combination_divs){
-	
+
 	var count = 0;
 	var random_color;
 	//Get combination palett
 	a_combination_divs = document.querySelectorAll("#combination .main_div");
 	var a_color_combination = [];
-	
+
 	//Set a random combination
 	//for (var i=0; i < a_combination_divs.length; i++){
 	while(a_color_combination.length < a_combination_divs.length)
-	{	
+	{
 		random_color = set_random_color();
 		if(a_color_combination.indexOf(hexToRgbA(random_color)) == -1){
 			$(a_combination_divs[count]).css({"background-color" : hexToRgbA(random_color)})
 			a_color_combination.push($(a_combination_divs[count]).css("background-color"));
 			count++;
 		}
-		
+
 	}
 	console.log(a_color_combination.length);
 	return a_color_combination;
 }
-	
+
 //Get a random color
 function set_random_color(){
 	var num_random = Math.floor(Math.random()  * (colors.length-1));
@@ -121,7 +121,7 @@ function change_cell_color(cell, color){
 function get_equal_colors(main_combination, combination2compare){
 	var equal_colors = 0;
 	var copy_main_array = copy_array_no_rep(main_combination);
-	
+
 	if(main_combination.length == combination2compare.length){
 		for(var i=0; i < combination2compare.length; i++){
 			if(combination2compare.indexOf(copy_main_array.shift()) > -1){
@@ -145,7 +145,7 @@ function get_equal_positions(main_combination, combination2compare){
 }
 
 function copy_array_no_rep(array){
-	
+
 	var array2 = [];
 	for(var i=0; i < array.length; i++){
 		if(array2.indexOf(array[i]) == -1){
@@ -157,7 +157,7 @@ function copy_array_no_rep(array){
 
 function won(main_combination, combination2compare){
 	won_game = true;
-	
+
 	if(main_combination.length == combination2compare.length){
 		for(var i=0; i < combination2compare.length; i++){
 			if(combination2compare[i] != main_combination[i]){
